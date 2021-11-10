@@ -1,24 +1,32 @@
-# README
+# Music　match
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+楽器を趣味で楽しむ人は多い。奏者誰しもが一度は思う”誰かと一緒に演奏したい。”
+しかし部活動や習い事等団体に所属していない限り、自力で仲間を探すことは難しい。
+このアプリでは、その想いを叶える個人奏者専門の音楽SNS。
+コミュニケーションを取ることはもちろん、演奏投稿機能で
+自分の演奏をアピールしたり、投稿一覧から好きな演奏を見つけることができる。
+”あの楽器と演奏したい”、”この人と一緒に演奏したい”。
+理想のセッションを叶えるアプリ、”Music match”
 
-Things you may want to cover:
+### サイトテーマ
+個人奏者同士のマッチを叶える音楽専門SNS
 
-* Ruby version
+### テーマを選んだ理由
+自分も趣味で楽器を演奏しており、誰かと一緒に演奏したくても見つけることが難しかった経験からこのアプリの制作を思い立ちました。
 
-* System dependencies
+### ターゲットユーザ
+楽器を趣味で楽しむ個人奏者
 
-* Configuration
+### 主な利用シーン
+本アプリのSNSでやり取りを行い、セッションするメンバーを見つける
 
-* Database creation
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/19nk4YJDoiQsbmIwfjI3dJtBSePfV3iMqz0yV2yXQACE/edit?usp=sharing
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+OS：Linux(CentOS)
+言語：HTML,CSS,JavaScript,Ruby,SQL
+フレームワーク：Ruby on Rails
+JSライブラリ：jQuery
+IDE：Cloud9
