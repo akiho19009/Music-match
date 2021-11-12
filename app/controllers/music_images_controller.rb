@@ -21,6 +21,8 @@ class MusicImagesController < ApplicationController
   end
   
   def show
+    #ルーティングはroutes.rbで定義しているためアクションメソッドのみ
+    @music_image = MusicImage.find(params[:id])
   end
   
   def destroy
