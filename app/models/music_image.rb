@@ -7,4 +7,7 @@ class MusicImage < ApplicationRecord
   #画像アップ用のメソッド、フィールド名にimageを指定
   attachment :image
   
+  has_many :music_comments, dependent: :destroy
+  
+  
 end

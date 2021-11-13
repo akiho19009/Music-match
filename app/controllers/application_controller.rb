@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
   #:devise_controller? → もしそれがdeviseのコントローラーだったら（devise_controller?というメソッドの返り値がtrueだったら）configure_permitted_parametersを呼ぶ。
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  #ログイン後、投稿一覧画面に遷移させる
+  def after_sign_in_path_for(resource)
+    music_images_path
+  end
+
+
   protected
 
   #ここの記述ではデバイス版のストロングパラメーター。
