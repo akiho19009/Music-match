@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-
   devise_for :users
-  
+
   root to: 'homes#top'
 
   #ルーティングを一括して自動生成
@@ -11,5 +10,6 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resources :music_comments, only: [:create, :destroy]
   end
-  
+  resources :users, only: [:show, :edit]
+
 end
