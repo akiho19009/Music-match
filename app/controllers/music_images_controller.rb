@@ -16,8 +16,9 @@ class MusicImagesController < ApplicationController
   end
 
   #投稿データの一覧表示
+  #kaminari専用のpageメソッドを追加
   def index
-    @music_images = MusicImage.all
+    @music_images = MusicImage.page(params[:page].reverse_)
   end
 
   def show
