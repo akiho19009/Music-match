@@ -1,0 +1,253 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+// #フォント適用部分
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+* {
+    font-family: 'Kiwi Maru', serif;
+}
+
+
+/*　ハンバーガーボタン　*/
+.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 3;
+  right : 13px;
+  top   : 12px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #555;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition   : 0.5s ease-in-out;
+  transition        : 0.5s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  background : #fff;
+  -webkit-transform: rotate(315deg);
+  -moz-transform   : rotate(315deg);
+  transform        : rotate(315deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  background : #fff;
+  -webkit-transform: rotate(-315deg);
+  -moz-transform   : rotate(-315deg);
+  transform        : rotate(-315deg);
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+nav.globalMenuSp ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  transition: .4s all;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+}
+nav.globalMenuSp ul li:hover{
+  background :#ddd;
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: #fff;
+  padding: 1em 0;
+  text-decoration :none;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  opacity: 100;
+
+}
+
+
+// #フッター部分
+footer {
+  height: auto;
+  color: #fff;
+  background-color: #000;
+}
+
+footer .container {
+  max-width: 1200px;
+  padding: 20px 20px;
+  margin: 0 auto;
+}
+
+/* ----------------------------- */
+
+.footA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footA p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+/* ----------------------------- */
+
+.footB {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footB ul {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.footB a {
+  display: block;
+  padding: 0;
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  margin-right: 0px;
+  line-height: 20px;
+  border-bottom: 3px solid #000;
+  transition: 0.5s;
+  letter-spacing: 3px;
+}
+
+.footB a:hover {
+  border-bottom: 3px solid #fff;
+}
+
+@media(min-width:1024px) {
+  .footB ul {
+    display: flex;
+  }
+
+  .footB a {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+
+/* ----------------------------- */
+
+.footC {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footC ul {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.footC a {
+  display: block;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: #000;
+  font-size: 25px;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+}
+
+.footC a {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+// #トップページ
+
+.top {/*親div*/
+  position: relative;
+  }
+
+.top p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  }
+
+.top img {
+  width: 100%;
+  }

@@ -1,11 +1,22 @@
 <!--#新規投稿用ページ-->
 
 <h1>音楽投稿フォーム</h1>
+
+<!--#エラーの内容を確認する-->
+<% if @music_image.errors.any? %>
+  <%= @music_image.errors.count %>件のエラーが発生しました
+  <% @music_image.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
 <%= form_with model: @music_image, local:true do |f| %>
 
   <h4>イメージ画像</h4>
+  <%= f.attachment_field :image %>
 
   <h4>タイトル</h4>
+  <%= f.text_field :music_name %>
 
   <h4>説明</h4>
   <%= f.text_area :caption %>

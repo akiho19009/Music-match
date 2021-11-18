@@ -11,14 +11,17 @@ class MusicImagesController < ApplicationController
     @music_image = MusicImage.new(music_image_params)
     #ログイン中のユーザー情報の取得（deviceのヘルパーメソッド）
     @music_image.user_id = current_user.id
-    @music_image.save
-    redirect_to music_image_path
+    if @music_image.save
+      redirect_to music_images_path
+    else
+      render :new
+    end
   end
 
   #投稿データの一覧表示
   #kaminari専用のpageメソッドを追加
   def index
-    @music_images = MusicImage.page(params[:page].reverse_)
+    @music_images = MusicImage.page(params[:page]).reverse_order
   end
 
   def show

@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
 
+  #ログインしていない場合、ログイン画面へ
+  before_action :authenticate_user!, except: [:top]
+  
   #configure~ → deviceで利用できるパラメーターを設定しますよという意味
   #before_action　→ 全てのコントローラーの実行前にアクションさせる
   #:devise_controller? → もしそれがdeviseのコントローラーだったら（devise_controller?というメソッドの返り値がtrueだったら）configure_permitted_parametersを呼ぶ。

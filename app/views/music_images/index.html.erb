@@ -1,22 +1,2 @@
-<!--#コントローラから渡された@post_images変数内から1つずつ取り出して、post_image変数へ格納-->
-<% @music_images.each do |music_image| %>
-<div>
-  <!--#link_toでmusic_image_path(music_image.id)のリンク先URLを指定する。-->
-  <%= link_to music_image_path(music_image.id) do %>
-  
-    <!--#refile側が用意したヘルパー、 imgタグを生成(post_image変数のimage_idに保存された画像のimgタグを生成)-->
-    <%= attachment_image_tag music_image, :image %>
-  <% end %>
-  
-  <p>投稿ユーザー画像 : <%= image_tag('music_image.jpeg')%></p>
-  <!--#post_image変数のmusic_nameカラムを表示、以下これらのカラムはmusic_imageモデルに定義されている-->
-  <p>タイトル : <%= music_image.music_name %></p>
-  <p>説明 : <%= music_image.caption %></p>
-  <!--#post_image変数のuser_idに関連付けられているuserモデルのnameカラムを表示-->
-  <p>ユーザーネーム : <%= music_image.user.name %></p>
-  <p><%= link_to "#{music_image.music_comments.count} コメント", music_image_path(music_image.id) %><>
-</div>
-<% end %>
-
-<!--#kaminariでページャ実装のためのヘルパー-->
-<%= paginate @music_images %>
+<!--#部分テンプレートの呼び出し-->
+<%= render 'music_images/list', music_images: @music_images %>

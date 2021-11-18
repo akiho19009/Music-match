@@ -7,7 +7,14 @@ class MusicImage < ApplicationRecord
   #画像アップ用のメソッド、フィールド名にimageを指定
   attachment :image
   
+  # has_many :favorites, dependent: destroy
   has_many :music_comments, dependent: :destroy
   
+  validates :music_name, presence: true
+  validates :image, presence: true
+  
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
   
 end
