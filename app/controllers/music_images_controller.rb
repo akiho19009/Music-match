@@ -7,7 +7,7 @@ class MusicImagesController < ApplicationController
 
   #投稿データの保存
   def create
-    #post_image_paramsでフォームで入力されたデータが投稿データとして許可されているパラメータかどうかをチェック
+    #music_image_paramsでフォームで入力されたデータが投稿データとして許可されているパラメータかどうかをチェック
     @music_image = MusicImage.new(music_image_params)
     #ログイン中のユーザー情報の取得（deviceのヘルパーメソッド）
     @music_image.user_id = current_user.id

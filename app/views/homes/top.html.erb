@@ -1,5 +1,10 @@
 <!--#メイン画像とロゴ部分-->
 <div class="top">
+  <div style="position: relative; display:inline-block;">
   <%= image_tag 'top.jpeg' %>
-  <p><%= image_tag 'logo-transparent.png' %></p>
+  <p><%= image_tag 'logo-transparent.png' %>
+    <button type="button" class="btn btn-outline-light"><%= link_to "新規登録", new_user_registration_path %></button>
+    <button type="button" class="btn btn-outline-light"><%= link_to "ログイン", new_user_session_path %></button>
+  </p>
+
 </div>

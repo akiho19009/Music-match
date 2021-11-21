@@ -14,4 +14,7 @@ class User < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+#※presenseですが、falseにしないと新規登録時に作用してintroductionがnilとなって新規登録できなくなりますので注意してください。新規登録時に自己紹介も入力必要な場合とするならtrueでOKです
+validates :introduction, presence: false, length: { maximum: 50 } # 自己紹介の最高文字数は50文字
+
 end
