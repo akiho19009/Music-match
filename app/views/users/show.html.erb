@@ -1,4 +1,7 @@
 <!--#ユーザーのプロフィール部分-->
+
+プロフィール
+
 <div>
   <h3><%= @user.name %></h3>
   <!--#プロフィール画像の表示-->
@@ -11,5 +14,7 @@
   <% end %>
 </div>
 
+
+あなたの投稿
 <!--#部分テンプレートの呼び出し-->
 <%= render 'music_images/list', music_images: @music_images %>

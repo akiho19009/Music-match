@@ -29,6 +29,10 @@ class MusicImagesController < ApplicationController
     @music_image = MusicImage.find(params[:id])
     @music_comment = MusicComment.new
   end
+  
+  def edit
+    @music_image = MusicImage.find(params[:id])
+  end
 
   def destroy
     @music_image = MusicImage.find(params[:id])
@@ -37,11 +41,17 @@ class MusicImagesController < ApplicationController
   end
 
 
+  def update
+    music_image = MusicImage.find(params[:id])
+    music_image.update(music_image_params)
+    redirect_to music_image_path(music_image)
+  end
+
   #投稿データのストロングパラメータ
   private
 
   def music_image_params
-    params.require(:music_image).permit(:name, :image, :caption)
+    params.require(:music_image).permit(:music_name, :image, :caption)
   end
 
 end

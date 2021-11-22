@@ -1,35 +1,55 @@
 <header>
+<script src="https://kit.fontawesome.com/36d386a37b.js" crossorigin="anonymous"></script>
+    <!--<div class="hamburger">-->
+    <!--  <span></span>-->
+    <!--  <span></span>-->
+    <!--  <span></span>-->
+    <!--</div>-->
+    
+    <!--<nav class="globalMenuSp">-->
+    <!--<ul>-->
 
-<div class="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-<nav class="globalMenuSp">
-    <ul>
-         <% if user_signed_in? %>
-            <li>
-              <%= link_to '投稿フォーム', new_music_image_path %>
-            </li>
-            <li>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            </li>
-            <li>
-              <%= link_to 'マイページ', user_path(current_user.id) %>
-            </li>
-
-          <% else %>
-            <li>
-              <%= link_to "新規登録", new_user_registration_path %>
-            </li>
-            <li>
-              <%= link_to "ログイン", new_user_session_path %>
-            </li>
-          <% end %>
-
-          <%= yield %>
-    </ul>
-</nav>
+<!--#画面が大きければコンテンツ表示、小さくするとプラグのレスポンシブナビバー-->
+    <nav class="navbar navbar-expand-lg navbar-info bg-info">
+      <div class="container">
+<div id="head-logo">
+    <%= link_to image_tag('/images/logo-transparent.png'), '/music_images' %>
+</div><!-- head-logo -->
+        <!--<span>-->
+        <!--  <#= link_to "Music match", root_path, class:"navbar-brand" %>-->
+        <!--</span>-->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to "マイページ", user_path(current_user), class:"fas fa-home nav-link text-light" %>
+              </li>
+              <li>
+                <%= link_to "投稿", new_music_image_path, class:"fas fa-users nav-link text-light" %>
+              </li>
+              <li>
+                <%= link_to "探す", music_images_path , class:"fas fa-book-open nav-link text-light" %>
+              <!--</li>-->
+              <li>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"fas fa-sign-out-alt nav-link text-light" %>
+              </li>
+            <% else %>
+              <!--<li>-->
+              <!--  <%#= link_to "探す", root_path, class:"fas fa-home nav-link text-light" %>-->
+              <!--</li>-->
+              <!--<li>-->
+              <!--  <%#= link_to "About", home_about_path, class:"fas fa-link nav-link text-light" %>-->
+              <!--</li>-->
+              <li>
+                <%= link_to "新規登録", new_user_registration_path, class:"fas fa-user-plus nav-link text-light" %>
+              </li>
+              <li>
+                <%= link_to "ログイン", new_user_session_path,class:"fas fa-sign-in-alt nav-link text-light" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
 </header>
